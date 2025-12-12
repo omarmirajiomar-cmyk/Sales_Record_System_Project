@@ -1,0 +1,70 @@
+/* Basic fallback styles to make the login page usable when Tailwind isn't available.
+   For the full design, install Tailwind or ensure CDN is allowed.
+*/
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f3f4f6; /* gray-50 */
+  color: #0f172a; /* gray-900 */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px;
+}
+
+.card {
+  width: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  overflow: hidden;
+}
+
+.header {
+  background: #0f172a; /* dark */
+  color: white;
+  text-align: center;
+  padding: 36px 20px;
+}
+
+.header .title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0 0 0;
+}
+
+.body {
+  padding: 24px;
+}
+
+.select, .btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #fff;
+  font-size: 16px;
+}
+
+.btn {
+  margin-top: 18px;
+  background: #9f7aea; /* purple-300-ish */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.small {
+  font-size: 14px;
+  color: #475569;
+}
