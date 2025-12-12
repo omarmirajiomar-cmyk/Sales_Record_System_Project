@@ -15,6 +15,7 @@ export const DebtorsModule: React.FC = () => {
   const [newName, setNewName] = useState('');
   const [newPhone, setNewPhone] = useState('');
   const [newPhoneError, setNewPhoneError] = useState<string | null>(null);
+  const [newItemBorrowed, setNewItemBorrowed] = useState('');
   const [newDebt, setNewDebt] = useState<number | ''>('');
 
   // Payment Form State (Clean Input)
