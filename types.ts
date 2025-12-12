@@ -44,6 +44,7 @@ export interface Debtor {
   id: string;
   name: string;
   phone: string;
+  item_borrowed: string; // What item/product was borrowed (e.g., "10kg Sugar", "50L Cooking Oil", "Electronics")
   total_debt: number;
   balance: number;
   status: DebtorStatus;
