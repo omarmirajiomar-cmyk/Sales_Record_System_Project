@@ -35,6 +35,10 @@ export const DebtorsModule: React.FC = () => {
   const handleAddDebtor = (e: React.FormEvent) => {
     e.preventDefault();
     if (newDebt === '' || newDebt < 0) return;
+    if (newItemBorrowed.trim() === '') {
+      alert('Please specify what item was borrowed');
+      return;
+    }
 
     // Validate Tanzania phone number
     if (!isValidTzPhone(newPhone)) {
@@ -47,11 +51,13 @@ export const DebtorsModule: React.FC = () => {
     addDebtor({
       name: newName,
       phone: phoneNormalized,
+      item_borrowed: newItemBorrowed.trim(),
       total_debt: newDebt
     });
     setNewName('');
     setNewPhone('');
     setNewPhoneError(null);
+    setNewItemBorrowed('');
     setNewDebt('');
     setView('list');
     refreshDebtors();
