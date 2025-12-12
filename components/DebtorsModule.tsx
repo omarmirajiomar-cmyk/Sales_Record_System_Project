@@ -262,6 +262,10 @@ export const DebtorsModule: React.FC = () => {
                    </span>
                 </div>
                 
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                   <p className="text-sm text-gray-600"><span className="font-bold">Item Borrowed:</span> {selectedDebtor.item_borrowed}</p>
+                </div>
+                
                 <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
                    <div className="flex justify-between text-sm">
                      <span className="text-gray-500">Total Credit Given:</span>
