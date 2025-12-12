@@ -202,6 +202,17 @@ export const DebtorsModule: React.FC = () => {
                  )}
              </div>
              <div>
+               <label className="block text-sm font-bold text-gray-700 mb-1">Item Borrowed (e.g., "10kg Sugar", "Electronics")</label>
+               <input
+                 type="text"
+                 value={newItemBorrowed}
+                 onChange={e => setNewItemBorrowed(e.target.value)}
+                 className="w-full px-3 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:bg-white transition-colors"
+                 required
+                 placeholder="Describe what was borrowed"
+               />
+             </div>
+             <div>
                <label className="block text-sm font-bold text-gray-700 mb-1">Initial Debt Amount (TZS)</label>
                <div className="relative">
                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm font-bold">TZS</span>
