@@ -42,6 +42,25 @@ const initializeDB = () => {
 
 initializeDB();
 
+// Migration: Add item_borrowed to existing debtors if missing (for old data)
+const migrateDebtorsAddItem = () => {
+  const debtors = getDebtors();
+  let migrated = false;
+  
+  debtors.forEach(d => {
+    if (!('item_borrowed' in d)) {
+      (d as any).item_borrowed = 'Item not specified'; // default for old records
+      migrated = true;
+    }
+  });
+  
+  if (migrated) {
+    localStorage.setItem(DEBTORS_KEY, JSON.stringify(debtors));
+  }
+};
+
+migrateDebtorsAddItem();
+
 // --- Users ---
 export const getUsers = (): User[] => JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
 
