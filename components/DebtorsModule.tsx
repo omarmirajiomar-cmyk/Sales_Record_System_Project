@@ -122,6 +122,7 @@ export const DebtorsModule: React.FC = () => {
                 <tr>
                   <th className="px-6 py-3">Name</th>
                   <th className="px-6 py-3">Phone</th>
+                  <th className="px-6 py-3">Item Borrowed</th>
                   <th className="px-6 py-3 text-right">Total Debt</th>
                   <th className="px-6 py-3 text-right">Balance</th>
                   <th className="px-6 py-3 text-center">Status</th>
@@ -135,6 +136,7 @@ export const DebtorsModule: React.FC = () => {
                     <td className="px-6 py-3 flex items-center gap-2">
                       <Phone size={14} className="text-gray-400" /> {d.phone}
                     </td>
+                    <td className="px-6 py-3 text-sm text-gray-700">{d.item_borrowed}</td>
                     <td className="px-6 py-3 text-right">TZS {d.total_debt.toLocaleString()}</td>
                     <td className="px-6 py-3 text-right font-bold text-indigo-600">TZS {d.balance.toLocaleString()}</td>
                     <td className="px-6 py-3 text-center">
@@ -154,7 +156,7 @@ export const DebtorsModule: React.FC = () => {
                 ))}
                 {debtors.length === 0 && (
                   <tr>
-                    <td colSpan={6} className="px-6 py-8 text-center text-gray-400">
+                    <td colSpan={7} className="px-6 py-8 text-center text-gray-400">
                       No debtors recorded yet.
                     </td>
                   </tr>
